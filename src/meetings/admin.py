@@ -1,10 +1,11 @@
 from django.contrib import admin
 from .models import (
-    Meeting, Talk, Author, Slide
+    Meeting, Talk, Author, SlideDeck
 )
 
 class TalkInline(admin.TabularInline):
     model = Talk
+    filter_horizontal = ('author',)
 
 class MeetingAdmin(admin.ModelAdmin):
     inlines = [
@@ -14,9 +15,13 @@ class MeetingAdmin(admin.ModelAdmin):
 class AuthorAdmin(admin.ModelAdmin):
     pass
 
-class SlideAdmin(admin.ModelAdmin):
+class SlideDeckAdmin(admin.ModelAdmin):
+    pass
+
+class TalkAdmin(admin.ModelAdmin):
     pass
 
 admin.site.register(Meeting, MeetingAdmin)
 admin.site.register(Author, AuthorAdmin)
-admin.site.register(Slide, SlideAdmin)
+admin.site.register(SlideDeck, SlideDeckAdmin)
+admin.site.register(Talk, TalkAdmin)

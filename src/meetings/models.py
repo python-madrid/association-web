@@ -5,7 +5,7 @@ class Meeting(models.Model):
         blank=False, null=False,
         help_text='Reunión Python Madrid de Octubre'
     )
-    when = models.CharField(max_length=255,
+    when_where = models.CharField(max_length=255,
         blank=False, null=False,
         help_text='A las 20:30 en las oficinas de Kaleidos'
     )
@@ -32,7 +32,7 @@ class Talk(models.Model):
     )
     author = models.ManyToManyField('Author')
     summary = models.TextField()
-    slides = models.ForeignKey('Slide',
+    slides = models.ForeignKey('SlideDeck',
         blank=True, null=True
     )
     video = models.CharField(max_length=255,
@@ -69,7 +69,7 @@ class Author(models.Model):
         verbose_name = 'Author'
         verbose_name_plural = 'Authors'
 
-class Slide(models.Model):
+class SlideDeck(models.Model):
     internal_file = models.FileField(
         blank=True, null=True, upload_to='slides',
         help_text='Sube aquí la presentación de la charla'
