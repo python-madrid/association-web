@@ -55,3 +55,6 @@ target/
 
 # Python Madrid ignores
 *local.py
+
+# Vim 
+*.swp
