@@ -8,4 +8,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('web.urls', namespace="web")),
     url(r'^', include('meetings.urls', namespace="meetings")),
+    url(r'^ckeditor/', include('ckeditor.urls')),
 )

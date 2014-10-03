@@ -4,7 +4,7 @@
 {% block content %}
     <article lang="es">
         <h2>{{ meeting.title }}</h2>
-        <p>{{ meeting.summary|striptags }}</p>
+        {{ meeting.summary|safe }}
         {% if meeting.talks %}
             <h3>Charlas</h3>
             {% for talk in meeting.talks.all %}

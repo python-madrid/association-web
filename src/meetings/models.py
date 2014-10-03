@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 class Meeting(models.Model):
     title = models.CharField(max_length=255,
@@ -20,7 +21,7 @@ class Meeting(models.Model):
         blank=True, null=True,
         help_text='Añade aquí un enlace de GMaps por ejemplo'
     )
-    summary = models.TextField()
+    summary = RichTextField()
 
     def __str__(self):
         return self.title
