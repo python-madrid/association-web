@@ -5,7 +5,7 @@
     <article lang="es">
         <h2>{{ meeting.title }}</h2>
         {{ meeting.summary|safe }}
-        {% if meeting.talks %}
+        {% if meeting.talks.all %}
             <h3>Charlas</h3>
             {% for talk in meeting.talks.all %}
                 <h4>{{ talk.title }}</h4>
