@@ -9,6 +9,9 @@ class Meeting(models.Model):
         blank=False, null=False,
         help_text='A las 20:30 en las oficinas de Kaleidos'
     )
+    datetime = models.DateTimeField(
+        blank=True, null=True
+    )
     venue_link = models.CharField(max_length=255,
         blank=True, null=True,
         help_text='Añade aquí un enlace de GMaps por ejemplo'
