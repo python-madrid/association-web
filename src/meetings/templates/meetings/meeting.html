@@ -5,21 +5,23 @@
     <article lang="es">
         <h2>{{ meeting.title }}</h2>
         <p>{{ meeting.summary|striptags }}</p>
-        <h3>Charlas</h3>
-        {% for talk in meeting.talks.all %}
-            <h4>{{ talk.title }}</h4>
-            <p>{{ talk.summary }}</p>
-            <p>Autor/es:</p>
-            <ul>
-                {% for author in talk.authors.all %}
-                <li>{{ author.name }}
-                    {% if author.twitter %}
-                        - <a href="http://twitter.com/{{ author.twitter }}" target="_new">{{ author.twitter }}</a>
-                    {% endif %}
-                </li>
-                {% endfor %}
-            </ul>
-            <hr>
-        {% endfor %}
+        {% if meetings.talks %}
+            <h3>Charlas</h3>
+            {% for talk in meeting.talks.all %}
+                <h4>{{ talk.title }}</h4>
+                <p>{{ talk.summary }}</p>
+                <p>Autor/es:</p>
+                <ul>
+                    {% for author in talk.authors.all %}
+                    <li>{{ author.name }}
+                        {% if author.twitter %}
+                            - <a href="http://twitter.com/{{ author.twitter }}" target="_new">{{ author.twitter }}</a>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+                <hr>
+            {% endfor %}
+        {% endif %}
     </article>
 {% endblock %}
