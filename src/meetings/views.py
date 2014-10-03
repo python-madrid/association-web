@@ -4,10 +4,18 @@ from django.template import RequestContext
 
 from meetings.models import Meeting
 
+import datetime
+
 class MeetingsView(View):
-    def get(self, request):
+    def get(self, request, year=None):
+        meetings = Meeting.objects.all().order_by('-datetime')
+        if year:
+            meetings = meetings.filter(datetime__year=year)
+        else:
+            current_year = datetime.datetime.today().year
+            meetings = meetings.filter(datetime__year=current_year)
         context = {
-            'meetings': Meeting.objects.all().order_by('-datetime')
+            'meetings': meetings
         }
         return render_to_response(
             'meetings/meetings.html', context,
