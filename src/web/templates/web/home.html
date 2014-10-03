@@ -8,4 +8,23 @@
     <p class="intro" style="position:relative; bottom: 20px">
         <img style="width:80px; position:relative; top:35px;" src="{% static 'imgs/logo-python-es.png' %}" /> ¿Conoces la Asociación Python España? Visita su <a href="http://es.python.org" target="_new">web</a>.</p>
 
+    <hr>
+
+    <h2>Reuniones recientes</h2>
+
+    <section>
+    {% for meeting in latest_meetings %}
+        <article lang="es">
+            <h3>{{ meeting.title }}</h3>
+            <p>{{ meeting.summary|striptags|truncatewords:30 }}</p>
+            <p>
+                <a class="navigation" href="{% url 'meetings:meeting' meeting.slug %}">Leer entrada completa</a> ↵
+            </p>
+        </article>
+    {% endfor %}
+    </section>
+
+    <p class="navigation bottom tright"><a href="{% url 'meetings:meetings' %}">Listado de todas las reuniones</a> →</p>
+
+
 {% endblock %}
