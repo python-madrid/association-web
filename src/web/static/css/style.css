@@ -166,7 +166,7 @@ img.avatar {
     float: right;
 }
 
-p, p.intro {
+p.intro {
     font-size: 16px;
     color: #A8A7C3;
 }

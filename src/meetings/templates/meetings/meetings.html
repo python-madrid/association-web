@@ -1,0 +1,16 @@
+{% extends "web/base.html" %}
+{% load static %}
+
+{% block content %}
+    <section>
+    {% for meeting in meetings %}
+        <article lang="es">
+            <h2>{{ meeting.title }}</h2>
+            <p>{{ meeting.summary|striptags|truncatewords:30 }}</p>
+            <p>
+                <a class="navigation" href="">Leer entrada completa</a> ↵
+            </p>
+        </article>
+    {% endfor %}
+    </section>
+{% endblock %}
