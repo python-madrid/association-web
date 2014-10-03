@@ -5,9 +5,10 @@ from .models import (
 
 class TalkInline(admin.TabularInline):
     model = Talk
-    filter_horizontal = ('author',)
+    filter_horizontal = ('authors',)
 
 class MeetingAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("title",)}
     inlines = [
         TalkInline
     ]

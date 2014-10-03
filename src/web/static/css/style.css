@@ -102,7 +102,7 @@ body>div {
     -moz-border-radius: 3px;
     -o-border-radius: 3px;
 }
-h1,h2,h3 {
+h1,h2,h3, h4 {
     font-weight: normal;
     font-family: 'Panefresco500wtRegular', sans-serif;
 }
@@ -129,6 +129,11 @@ h3 {
     font-size: 22px;
     line-height: 24px;
     margin: 0 0 24px 0;
+}
+h4 {
+    font-size: 18px;
+    line-height: 20px;
+    margin: 0 0 0px 0;
 }
 p, ul, ol, dl {
     line-height: 24px;
@@ -315,3 +320,4 @@ section section.exif-data table th {
 section.comments {
     margin-top: 20px;
 }
+

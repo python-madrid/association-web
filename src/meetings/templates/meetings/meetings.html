@@ -8,7 +8,7 @@
             <h2>{{ meeting.title }}</h2>
             <p>{{ meeting.summary|striptags|truncatewords:30 }}</p>
             <p>
-                <a class="navigation" href="">Leer entrada completa</a> ↵
+                <a class="navigation" href="{% url 'meetings:meeting' meeting.slug %}">Leer entrada completa</a> ↵
             </p>
         </article>
     {% endfor %}

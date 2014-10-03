@@ -5,6 +5,10 @@ class Meeting(models.Model):
         blank=False, null=False,
         help_text='Reunión Python Madrid de Octubre'
     )
+    slug  = models.SlugField(max_length=255,
+        blank=True, null=False,
+        unique=True, db_index=True, editable=True
+    )
     when_where = models.CharField(max_length=255,
         blank=False, null=False,
         help_text='A las 20:30 en las oficinas de Kaleidos'
@@ -28,12 +32,15 @@ class Meeting(models.Model):
 
 class Talk(models.Model):
     meeting = models.ForeignKey('Meeting',
-        blank=False, null=False
+        blank=False, null=False,
+        related_name='talks'
     )
     title = models.CharField(max_length=255,
         blank=False, null=False
     )
-    author = models.ManyToManyField('Author')
+    authors = models.ManyToManyField('Author',
+        related_name='authors'
+    )
     summary = models.TextField()
     slides = models.ForeignKey('SlideDeck',
         blank=True, null=True
