@@ -10,7 +10,7 @@ class Meeting(models.Model):
         unique=True, db_index=True, editable=True
     )
     when_where = models.CharField(max_length=255,
-        blank=False, null=False,
+        blank=True, null=True,
         help_text='A las 20:30 en las oficinas de Kaleidos'
     )
     datetime = models.DateTimeField(
@@ -41,7 +41,9 @@ class Talk(models.Model):
     authors = models.ManyToManyField('Author',
         related_name='authors'
     )
-    summary = models.TextField()
+    summary = models.TextField(
+        blank=True, null=True
+    )
     slides = models.ForeignKey('SlideDeck',
         blank=True, null=True
     )
