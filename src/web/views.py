@@ -7,7 +7,7 @@ from meetings.models import Meeting
 class HomeView(View):
     def get(self, request):
         context = {
-            'latest_meetings': Meeting.objects.all()[:5]
+            'latest_meetings': Meeting.objects.all().order_by('-datetime')[:5]
         }
         return render_to_response(
             'web/home.html', context,
