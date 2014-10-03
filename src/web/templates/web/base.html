@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Python Madrid</title>
+
+        <meta charset='utf-8' />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="Keywords" content="python, python-madrid.es, madrid, software, programming" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="Description" content="Página web del grupo Python Madrid" />
+
+        <link rel="stylesheet" media="screen" href="{% static 'css/style.css' %}" />
+        <link rel="stylesheet" media="screen" href="{% static 'css/fonts.css' %}" />
+        <link rel="stylesheet" media="screen" href="/static/panefresco/stylesheet.css" />
+        <link rel="stylesheet" media="screen" href="/static/css/friendly.css" />
+        <link type="text/css" rel="stylesheet" media="screen" href="/static/colorbox/colorbox.css" />
+
+        <meta property="og:title" content="Python Madrid Page"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="http://python-madrid.es" />
+        <meta property="og:image" content=""/>
+
+        {% block extraheader %}{% endblock %}
+    </head>
+    <body>
+        <div class="main-container">
+            <header class="main-header">
+                <a href="{% url 'web:home' %}" target="_self">
+                    <img style="width:400px" src="{% static 'imgs/logo.png' %}"></img>
+                </a>
+            </header>
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

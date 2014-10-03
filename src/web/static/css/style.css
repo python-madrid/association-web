@@ -1,0 +1,317 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+ul.errorlist {
+    padding: 3px;
+    margin: 0px;
+    font-size: 10px;
+    color: red;
+    list-style: none;
+}
+
+
+@font-face {
+    font-family: "Museo";
+    src: url("../fonts/Museo300-Regular.otf");
+}
+
+@font-face {
+    font-family: 'MonacoRegular';
+    src: /* IE doesn't draw well */
+         /*url('monaco-webfont.eot?') format('eot'),*/
+         url('../fonts/monaco-webfont.woff') format('woff'),
+         url('../fonts/monaco-webfont.ttf') format('truetype'),
+         url('../fonts/monaco-webfont.svg#webfontyFRf53FT') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.btn01{background-color:#EFEFEF;
+padding: 5px 20px; font-size: 15px; color: #9c9c9c; font-weight:bold; text-decoration: none;
+cursor: pointer; margin-right: 5px; border-radius: 2px; border: 1px solid #D9D9D9;}
+.btn01:hover {border: 1px solid #B9B9B9; color: #000;}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+}
+
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Styles for westphahl.net */
+body {
+    line-height: 1;
+    /*
+    font: 16px/20px 'Panefresco250wtRegular', serif;
+    font-family: Museo,Palatino,Georgia,Serif;
+    */
+    font: 16px/20px Museo,Palatino,Georgia,Serif;
+    font-family
+    font-size: 100%;
+    /*background-color: #edebea;*/
+    color: black;
+    padding-top: 3em;
+}
+
+body>div {
+    width: 50em;
+    padding: 0em 3em 1.5em;
+    margin: 0em auto;
+    background-color: #fff;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+h1,h2,h3 {
+    font-weight: normal;
+    font-family: 'Panefresco500wtRegular', sans-serif;
+}
+span.tags {
+    font-size: 12px;
+}
+span.tags a {
+    text-decoration: none;
+}
+small {
+    font-size: 14px;
+}
+h1 {
+    font-size: 32px;
+    line-height: 48px;
+    margin: 0 0 24px 0;
+}
+h2 {
+    font-size: 28px;
+    line-height: 48px;
+    margin: 0 0 24px 0 ;
+}
+h3 {
+    font-size: 22px;
+    line-height: 24px;
+    margin: 0 0 24px 0;
+}
+p, ul, ol, dl {
+    line-height: 24px;
+    margin: 0 0 12px 0;
+}
+ul {
+    list-style-type: square;
+}
+ol {
+    list-style-type: decimal;
+}
+dt {
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: bold;
+}
+hr {
+    border: 0;
+    background-color: #edebea;
+    height: 2px;
+    margin: 0 0 22px 0;
+}
+em {
+    font-style: italic;
+}
+strong {
+    font-weight: bold;
+}
+a {
+    color: #e04f04;
+    color: #2060A0;
+}
+
+img.avatar {
+    position: relative;
+    float: right;
+}
+
+p, p.intro {
+    font-size: 16px;
+    color: #A8A7C3;
+}
+.meta {
+    font-family: 'Panefresco400wtItalic';
+    color: #a8a7a6;
+    font-size: 13px;
+}
+dl .meta {
+    margin: 0 0 24px 0;
+}
+dl .url {
+    font-family: 'Panefresco400wtItalic';
+    color: #a8a7a6;
+}
+dl.bookmarks-home .url {
+    margin: 0 0 24px 0;
+}
+.navigation {
+    font-family: 'Panefresco400wtItalic';
+    font-size: 13px;
+}
+.bottom {
+    margin: 0;
+}
+.tright {text-align: right;}
+.dsq-dc-logo {display: none !important;}
+
+footer {
+    margin-top: 40px;
+    font-style: italic;
+    color: #A8A7A6;
+    font-size: 11px;
+}
+header.main-header {
+    margin-bottom: 20px;
+}
+header.nav-header {
+    margin-bottom: 20px;
+}
+
+pre {
+    font-family: Monaco, 'MonacoRegular', 'Courier New', monospace;
+    line-height: 14px;
+    font-size: 12px;
+    overflow: auto;
+    padding: 12px;
+    margin: 0 0 24px;
+}
+
+.viewer-content pre {
+    padding: 7px;
+    box-shadow: 0px 0px 25px 0px #aaa;
+    border: 1px solid #aaa;
+    margin-top: 15px;
+}
+
+section.form textarea {
+    width: 620px;
+    border: 1px solid #aaa;
+}
+section.paste-list {
+    margin-top: 50px;
+}
+select, input {
+    background-color: white;
+    border: 1px solid #aaa;
+}
+
+
+header nav, header nav li,
+footer  nav, footer nav li {
+    display: inline;
+    list-style: none;
+    padding: 5px;
+}
+
+header nav, footer nav {
+    padding-bottom: 20px;
+}
+
+ul {
+    padding-left: 30px;
+}
+section.page img {
+    max-width: 40em;
+}
+section.month {
+    margin-bottom: 30px;
+}
+
+/* PHOTO */
+section.latest-photos {
+    overflow: hidden;
+}
+
+section article.photo {
+    width: 200px;
+    height: 270px;
+    float: left;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #FFF;
+    position: relative;
+}
+section article.photo img {
+    width: 200px;
+}
+section article.photo div.photo-meta {
+    font-size: 12px;
+    line-height: 1em;
+}
+section article.photo div.photo-meta p.small-description {
+    line-height: 1em;
+}
+
+section article.photo a.show-detail {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
+section article.photo a.show-detail img {
+    width: 25px;
+}
+
+section article.photo-detail {
+    margin-left: -48px;
+}
+
+section article.photo-detail img {
+    width: 896px;
+}
+
+section section.exif-data {
+    margin-top: 10px;
+}
+section section.exif-data h2 {
+    margin-bottom: 0px;
+}
+section section.exif-data table {
+    width: 95%;
+}
+section section.exif-data table th {
+    text-align: left;
+}
+section.comments {
+    margin-top: 20px;
+}
