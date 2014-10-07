@@ -55,6 +55,8 @@ target/
 
 # Python Madrid ignores
 *local.py
+src/media/*
+src/static/*
 
-# Vim 
+# Vim
 *.swp
