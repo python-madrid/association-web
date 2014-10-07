@@ -10,9 +10,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="Description" content="Página web del grupo Python Madrid" />
 
-        <link rel="stylesheet" media="screen" href="{% static 'css/style.css' %}" />
-        <link rel="stylesheet" media="screen" href="{% static 'css/fonts.css' %}" />
-        <link rel="stylesheet" media="screen" href="{% static 'panefresco/stylesheet.css' %}" />
+        <link rel="stylesheet" media="screen" href="{% static 'web/css/style.css' %}" />
+        <link rel="stylesheet" media="screen" href="{% static 'web/css/fonts.css' %}" />
+        <link rel="stylesheet" media="screen" href="{% static 'web/panefresco/stylesheet.css' %}" />
 
         <meta property="og:title" content="Python Madrid Page"/>
         <meta property="og:type" content="website"/>
@@ -25,7 +25,7 @@
         <div class="main-container">
             <header class="main-header">
                 <a href="{% url 'web:home' %}" target="_self">
-                    <img style="width:400px" src="{% static 'imgs/logo.png' %}"></img>
+                    <img style="width:400px" src="{% static 'web/imgs/logo.png' %}"></img>
                 </a>
             </header>
             {% block content %}{% endblock %}
