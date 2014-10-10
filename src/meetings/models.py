@@ -67,6 +67,7 @@ class Talk(models.Model):
     class Meta:
         verbose_name = 'Talk'
         verbose_name_plural = 'Talks'
+        ordering = ['id']
 
 
 class Author(models.Model):
