@@ -10,9 +10,13 @@ class Meeting(models.Model):
         blank=True, null=False,
         unique=True, db_index=True, editable=True
     )
-    when_where = models.CharField(max_length=255,
+    when = models.CharField(max_length=255,
         blank=True, null=True,
-        help_text='A las 20:30 en las oficinas de Kaleidos'
+        help_text='23 de septiembre de 2014, a partir de las 20:30'
+    )
+    where = models.CharField(max_length=255,
+        blank=True, null=True,
+        help_text='Oficinas de Kaleidos. Calle La Botánica, 4'
     )
     datetime = models.DateTimeField(
         blank=True, null=True

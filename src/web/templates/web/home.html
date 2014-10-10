@@ -16,7 +16,7 @@
     {% for meeting in latest_meetings %}
         <article lang="es">
             <h3>{{ meeting.title }}</h3>
-            <p>{{ meeting.summary|striptags|truncatewords:30 }}</p>
+            <p>{{ meeting.summary|safe|striptags|truncatewords:30 }}</p>
             <p>
                 <a class="navigation" href="{% url 'meetings:meeting' meeting.slug %}">Leer entrada completa</a> ↵
             </p>

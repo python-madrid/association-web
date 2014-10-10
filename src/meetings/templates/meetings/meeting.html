@@ -4,26 +4,42 @@
     <article lang="es">
         <h2>{{ meeting.title }}</h2>
         {{ meeting.summary|safe }}
+
+        <hr>
+
+        {% if meeting.when or meeting.where or meeting.venue_link %}
+            <h3>La reunión</h3>
+            <ul>
+            {% if meeting.when %}<li>Cuándo: {{ meeting.when }}</li>{% endif %}
+            {% if meeting.where %}<li>Dónde: {{ meeting.where }}</li>{% endif %}
+            {% if meeting.venue_link %}<li><a href="{{ meeting.venue_link }}" target="_new">Enlace mapa</a></li>{% endif %}
+            </ul>
+        {% endif %}
+
+        <hr>
+
         {% if meeting.talks.all %}
-            <h3>Charlas</h3>
+            <h3>Las charlas</h3>
             {% for talk in meeting.talks.all %}
                 <h4>{{ talk.title }}</h4>
-                <p>{{ talk.summary }}</p>
-                <p>Autor/es:</p>
-                <ul>
-                    {% for author in talk.authors.all %}
-                    <li>{{ author.name }}
-                        {% if author.twitter %}
-                            - <a href="http://twitter.com/{{ author.twitter }}" target="_new">{{ author.twitter }}</a>
-                        {% endif %}
-                    </li>
-                    {% endfor %}
-                </ul>
-                <hr>
+                <div class="talk-desc">
+                    <p>{{ talk.summary }}</p>
+                    <p>Autor/es:
+                        {% for author in talk.authors.all %}
+                            {{ author.name }}
+                            {% if author.twitter %}
+                                (<a href="http://twitter.com/{{ author.twitter }}" target="_new">{{ author.twitter }}</a>)
+                            {% endif %}
+                        {% endfor %}
+                    </p>
+                    {% if talk.slides %}
+                    <p>Ver <a href="{{ talk.slides.external_file }}" target="_new">presentación</a></p>
+                    {% endif %}
+                </div>
             {% endfor %}
         {% endif %}
     </article>
-
+    <hr>
     {% include "meetings/disqus.html" %}
 
 {% endblock %}
