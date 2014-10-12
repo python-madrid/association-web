@@ -14,9 +14,9 @@
             {% if meeting.where %}<li>Dónde: {{ meeting.where }}</li>{% endif %}
             {% if meeting.venue_link %}<li><a href="{{ meeting.venue_link }}" target="_new">Enlace mapa</a></li>{% endif %}
             </ul>
+            <hr>
         {% endif %}
 
-        <hr>
 
         {% if meeting.talks.all %}
             <h3>Las charlas</h3>
@@ -40,9 +40,9 @@
                     {% endif %}
                 </div>
             {% endfor %}
+            <hr>
         {% endif %}
     </article>
-    <hr>
     {% include "meetings/disqus.html" %}
 
 {% endblock %}
