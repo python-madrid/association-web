@@ -51,18 +51,6 @@ class Talk(models.Model):
         blank=True, null=True, upload_to='slides',
         help_text='Sube aquí la presentación de la charla'
     )
-    slide_external = models.CharField(max_length=255,
-        blank=True, null=True,
-        help_text='Escribe el enlace externo donde esté alojada la presentación'
-    )
-    video = models.CharField(max_length=255,
-        blank=True, null=True,
-        help_text='Añade aquí el enlace donde esté el vídeo'
-    )
-    record = models.CharField(max_length=255,
-        blank=True, null=True,
-        help_text='Añade aquí el enlace donde esté el audio'
-    )
 
     def __str__(self):
         return self.title
