@@ -46,9 +46,7 @@ class Talk(models.Model):
     authors = models.ManyToManyField('Author',
         related_name='authors'
     )
-    summary = models.TextField(
-        blank=True, null=True
-    )
+    summary = RichTextField()
     slide_internal = models.FileField(
         blank=True, null=True, upload_to='slides',
         help_text='Sube aquí la presentación de la charla'
