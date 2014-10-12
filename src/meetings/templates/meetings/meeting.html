@@ -31,7 +31,7 @@
                             {% endif %}
                         {% endfor %}
                     </p>
-                    <p>{{ talk.summary }}</p>
+                    <p>{{ talk.summary|safe }}</p>
                     {% if talk.slide_external or talk.slide_internal %}
                     <p>
                     {% if talk.slide_external %}- Ver <a href="{{ talk.slide_external }}" target="_new">presentación</a>{% endif %}
