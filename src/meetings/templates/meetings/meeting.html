@@ -23,7 +23,6 @@
             {% for talk in meeting.talks.all %}
                 <h4>{{ talk.title }}</h4>
                 <div class="talk-desc">
-                    <p>{{ talk.summary }}</p>
                     <p>Autor/es:
                         {% for author in talk.authors.all %}
                             {{ author.name }}
@@ -32,6 +31,7 @@
                             {% endif %}
                         {% endfor %}
                     </p>
+                    <p>{{ talk.summary }}</p>
                     {% if talk.slide_external or talk.slide_internal %}
                     <p>
                     {% if talk.slide_external %}- Ver <a href="{{ talk.slide_external }}" target="_new">presentación</a>{% endif %}
