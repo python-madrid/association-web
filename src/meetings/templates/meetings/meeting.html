@@ -32,10 +32,10 @@
                             {% endif %}
                         {% endfor %}
                     </p>
-                    {% if talk.slides.external_file or talk.slides.internal_file %}
+                    {% if talk.slide_external or talk.slide_internal %}
                     <p>
-                    {% if talk.slides.external_file %}- Ver <a href="{{ talk.slides.external_file }}" target="_new">presentación</a>{% endif %}
-                    {% if talk.slides.internal_file %}- Descargar <a href="{{ MEDIA_URL }}{{ talk.slides.internal_file }}" target="_new">presentación</a>{% endif %}
+                    {% if talk.slide_external %}- Ver <a href="{{ talk.slide_external }}" target="_new">presentación</a>{% endif %}
+                    {% if talk.slides_internal %}- Descargar <a href="{{ MEDIA_URL }}{{ talk.slide_internal }}" target="_new">presentación</a>{% endif %}
                     </p>
                     {% endif %}
                 </div>
