@@ -32,11 +32,8 @@
                         {% endfor %}
                     </p>
                     <p>{{ talk.summary|safe }}</p>
-                    {% if talk.slide_external or talk.slide_internal %}
-                    <p>
-                    {% if talk.slide_external %}- Ver <a href="{{ talk.slide_external }}" target="_new">presentación</a>{% endif %}
-                    {% if talk.slides_internal %}- Descargar <a href="{{ MEDIA_URL }}{{ talk.slide_internal }}" target="_new">presentación</a>{% endif %}
-                    </p>
+                    {% if talk.slide_internal %}
+                        <p>Descargar <a href="{{ MEDIA_URL }}{{ talk.slide_internal }}" target="_new">presentación</a></p>
                     {% endif %}
                 </div>
             {% endfor %}
