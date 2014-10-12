@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import (
-    Meeting, Talk, Author, SlideDeck
+    Meeting, Talk, Author
 )
 
 class TalkInline(admin.TabularInline):
@@ -17,13 +17,9 @@ class MeetingAdmin(admin.ModelAdmin):
 class AuthorAdmin(admin.ModelAdmin):
     pass
 
-class SlideDeckAdmin(admin.ModelAdmin):
-    pass
-
 class TalkAdmin(admin.ModelAdmin):
     pass
 
 admin.site.register(Meeting, MeetingAdmin)
 admin.site.register(Author, AuthorAdmin)
-admin.site.register(SlideDeck, SlideDeckAdmin)
 admin.site.register(Talk, TalkAdmin)

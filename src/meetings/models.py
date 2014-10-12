@@ -49,8 +49,13 @@ class Talk(models.Model):
     summary = models.TextField(
         blank=True, null=True
     )
-    slides = models.ForeignKey('SlideDeck',
-        blank=True, null=True
+    slide_internal = models.FileField(
+        blank=True, null=True, upload_to='slides',
+        help_text='Sube aquí la presentación de la charla'
+    )
+    slide_external = models.CharField(max_length=255,
+        blank=True, null=True,
+        help_text='Escribe el enlace externo donde esté alojada la presentación'
     )
     video = models.CharField(max_length=255,
         blank=True, null=True,
@@ -86,13 +91,3 @@ class Author(models.Model):
     class Meta:
         verbose_name = 'Author'
         verbose_name_plural = 'Authors'
-
-class SlideDeck(models.Model):
-    internal_file = models.FileField(
-        blank=True, null=True, upload_to='slides',
-        help_text='Sube aquí la presentación de la charla'
-    )
-    external_file = models.CharField(max_length=255,
-        blank=True, null=True,
-        help_text='Escribe el enlace externo donde esté alojada la presentación'
-    )
