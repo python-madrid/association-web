@@ -25,7 +25,7 @@ class Meeting(models.Model):
         blank=True, null=True,
         help_text='Añade aquí un enlace de GMaps por ejemplo'
     )
-    summary = RichTextField()
+    summary = RichTextField(blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -46,7 +46,7 @@ class Talk(models.Model):
     authors = models.ManyToManyField('Author',
         related_name='authors'
     )
-    summary = RichTextField()
+    summary = RichTextField(blank=True, null=True)
     slide_internal = models.FileField(
         blank=True, null=True, upload_to='slides',
         help_text='Sube aquí la presentación de la charla'
